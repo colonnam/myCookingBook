@@ -1,0 +1,96 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MyCookingBook</title>
+
+  <link type="text/css" href="./css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" href="./css/styles.css" rel="stylesheet">
+  <link rel="manifest" href="./manifest.json">
+  
+  <meta name="theme-color" content="#FFE9D2">
+
+  <script type="text/javascript" src="./js/materialize.min.js"></script>
+</head>
+<body class="grey lighten-4">
+
+ 
+  <nav class="z-depth-0">
+    <div class="nav-wrapper container">
+      <a href="./"><span>MyCookingBook</span></a>
+    </div>
+  </nav>
+
+  <div class="recipes container grey-text text-darken-1">
+    <div class="card-panel recipe white row">
+      <img src="./img/dish.png" alt="recipe thumb">
+      <div class="recipe-details">
+        <div class="recipe-title">Edame Noodles</div>
+        <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
+      </div>
+      <div class="recipe-delete">
+        <i class="material-icons">delete_outline</i>
+      </div>
+    </div>
+    <div class="card-panel recipe white row">
+      <img src="./img/dish.png" alt="recipe thumb">
+      <div class="recipe-details">
+        <div class="recipe-title">Edame Noodles</div>
+        <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
+      </div>
+      <div class="recipe-delete">
+        <i class="material-icons">delete_outline</i>
+      </div>
+    </div>
+    <div class="card-panel recipe white row">
+      <img src="./img/dish.png" alt="recipe thumb">
+      <div class="recipe-details">
+        <div class="recipe-title">Edame Noodles</div>
+        <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
+      </div>
+      <div class="recipe-delete">
+        <i class="material-icons">delete_outline</i>
+      </div>
+    </div>
+    <div class="card-panel recipe white row">
+      <img src="./img/dish.png" alt="recipe thumb">
+      <div class="recipe-details">
+        <div class="recipe-title">Edame Noodles</div>
+        <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
+      </div>
+      <div class="recipe-delete">
+        <i class="material-icons">delete_outline</i>
+      </div>
+    </div>
+  </div>
+
+  <div class="center">
+    <a class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-form">
+      <i class="material-icons">add</i>
+    </a>
+  </div>
+
+ 
+  <div id="side-form" class="sidenav side-form">
+    <form class="add-recipe container section">
+      <h6 >Nouvelle recette</h6>
+      <div class="divider"></div>
+      <div class="input-field">
+        <input placeholder="e.g. Lasagnes" id="title" type="text" class="validate">
+        <label for="title">Titre recette</label>
+      </div>
+      <div class="input-field">
+        <input placeholder="e.g. salade, tomates, figatellu" id="ingredients" type="text" class="validate">
+        <label for="ingredients">Ingredients</label>
+      </div>
+      <div class="input-field center">
+        <button class="btn-small">ajouter</button>
+      </div>
+    </form>
+  </div>
+  <script src="./js/app.js"></script>
+  <script src="./js/ui.js"></script>
+</body>
+</html>
