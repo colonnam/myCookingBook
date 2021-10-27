@@ -69,7 +69,7 @@ function(){
         titre: titre_recette,
         ingredients: ingredients_recette
       })
-      window.location.reload()
+      setTimeout(function(){location.href="./"},1000)
   }
   else 
     console.log("titre ou recette nulle")
