@@ -1,4 +1,5 @@
-const cacheName='site'
+const cacheName='cache'
+const cacheDynamic='dynamic'
 const assets=[
     './',
     './index.html',
@@ -23,13 +24,26 @@ self.addEventListener('install',evt=>{
 
 self.addEventListener('activate',evt=>{
     console.log('activé') 
+    evt.waitUntil(
+        caches.keys().then(keys=>{
+            return Promise.all(keys
+                .filter(key=>key !== cacheName)
+                .map(key=>caches.delete(key))
+            )
+        })
+    )
 })
 
 self.addEventListener('fetch',evt=>{
-    console.log('fetch',evt) 
+    //console.log('fetch',evt) 
     evt.respondWith(
         caches.match(evt.request).then(res=>{
-            return res || fetch(evt.request)
+            return res || fetch(evt.request).then(res=>{
+                return caches.open(cacheDynamic).then(cache=>{
+                    cache.put(evt.request.url,res.clone())
+                    return res
+                })
+            })
         })
     )       
 })
