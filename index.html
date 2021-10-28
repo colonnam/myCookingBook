@@ -12,7 +12,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-auth.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
-  
+
   <link rel="apple-touch-icon" href="./icons/icon-96x96.png">
   <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
   
@@ -26,7 +26,7 @@
   <nav class="z-depth-0">
     <div class="nav-wrapper container">
       <a href="./"><span>MyCookingBook</span></a>
-      <a href="./login.html"><span>Connnexion</span></a>
+      <button class="btn-small" onclick="logtout()"><span>Deconnnexion</span></button>
       
     </div>
   </nav>
@@ -61,5 +61,34 @@
   <script type="module" src="./js/db.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/ui.js"></script>
+  <script>
+
+    var logtout =  function(){
+        firebase.auth().signOut().then(function(){
+            console.log('success');
+            window.location.replace("login.html");
+        },function(){})
+    }
+
+var init = function(){
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          console.log(user.uid);
+          mainContainer.style.display = "";
+        } else {
+          // No user is signed in.
+          mainContainer.style.display = "none";
+          console.log("redirect");
+          window.location.replace("login.html");
+        }
+      });
+}
+    
+init();
+
+mainApp.logout = logtout;
+;</script>
+  <script src="./js/firebase.js"></script>
 </body>
 </html>
